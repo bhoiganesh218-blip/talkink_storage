@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talkink Storage - Cloud Vault</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    
+    
+    
+    <link rel="manifest" href="manifest.json">
+
+</head>
+<body>
+
+    <header class="hero-section">
+        <div class="hero-glow-effect"></div>
+        <div class="hero-content">
+            <h1 class="brand-title">Talkink Storage</h1>
+            <p class="brand-tagline">Advanced Multi-Account Decentralized Cloud Vault</p>
+        </div>
+    </header>
+
+<main class="vault-container">
+    <div class="grid-layout-wrapper">
+        
+        <div class="image-vault-column">
+            <h2 class="column-title image-column-title">
+                <i class="fa-solid fa-camera-retro"></i> Image Cloud Engines
+            </h2>
+            
+            <figure class="vault-card image-vault" onclick="openAccountPortal(1, 'Image Vault Alpha')">
+                <div class="card-graphic-node">
+                    <div class="icon-avatar">
+                        <i class="fa-solid fa-images"></i>
+                    </div>
+                    <span class="vault-status-badge">Vault 01</span>
+                </div>
+                <figcaption class="account-signature">
+                    <span class="meta-label">Cloudinary Node 1:</span>
+                    <span class="email-text">bhoirutukanta0@gmail.com</span>
+                </figcaption>
+            </figure>
+
+            <figure class="vault-card image-vault" onclick="openAccountPortal(2, 'Image Vault Beta')">
+                <div class="card-graphic-node">
+                    <div class="icon-avatar">
+                        <i class="fa-solid fa-camera"></i>
+                    </div>
+                    <span class="vault-status-badge">Vault 02</span>
+                </div>
+                <figcaption class="account-signature">
+                    <span class="meta-label">Cloudinary Node 2:</span>
+                    <span class="email-text">oldman111p@gmail.com</span>
+                </figcaption>
+            </figure>
+
+            <figure class="vault-card supabase-vault" onclick="triggerSupabaseUploadSystem('Supabase Infinite Node')">
+                <div class="card-graphic-node">
+                    <div class="icon-avatar">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <span class="vault-status-badge supa-badge">Bypass Node</span>
+                </div>
+                <figcaption class="account-signature">
+                    <span class="meta-label">Supabase Cloud Storage:</span>
+                    <span class="email-text">No Size Limits (Up to 50MB+)</span>
+                </figcaption>
+            </figure>
+        </div>
+
+        <div class="pdf-vault-column">
+            <h2 class="column-title pdf-column-title">
+                <i class="fa-solid fa-file-invoice"></i> PDF Document Vaults
+            </h2>
+            
+            <figure class="vault-card pdf-vault" onclick="openAccountPortal(3, 'PDF Document Vault 1')">
+                <div class="card-graphic-node">
+                    <div class="icon-avatar">
+                        <i class="fa-solid fa-file-pdf"></i>
+                    </div>
+                    <span class="vault-status-badge">Vault 03</span>
+                </div>
+                <figcaption class="account-signature">
+                    <span class="meta-label">Cloudinary Node 3:</span>
+                    <span class="email-text">nambara119@gmail.com</span>
+                </figcaption>
+            </figure>
+
+            <figure class="vault-card pdf-vault" onclick="openAccountPortal(4, 'PDF Document Vault 2')">
+                <div class="card-graphic-node">
+                    <div class="icon-avatar">
+                        <i class="fa-solid fa-file-lines"></i>
+                    </div>
+                    <span class="vault-status-badge">Vault 04</span>
+                </div>
+                <figcaption class="account-signature">
+                    <span class="meta-label">Cloudinary Node 4:</span>
+                    <span class="email-text">vistagroup07@gmail.com</span>
+                </figcaption>
+            </figure>
+
+            <figure class="vault-card pdf-vault" onclick="openAccountPortal(5, 'PDF Document Vault 3')">
+                <div class="card-graphic-node">
+                    <div class="icon-avatar">
+                        <i class="fa-regular fa-file-pdf"></i>
+                    </div>
+                    <span class="vault-status-badge">Vault 05</span>
+                </div>
+                <figcaption class="account-signature">
+                    <span class="meta-label">Cloudinary Node 5:</span>
+                    <span class="email-text">nambara43@gmail.com</span>
+                </figcaption>
+            </figure>
+
+            <figure class="vault-card pdf-vault" onclick="openAccountPortal(6, 'PDF Document Vault 4')">
+                <div class="card-graphic-node">
+                    <div class="icon-avatar">
+                        <i class="fa-solid fa-folder-open"></i>
+                    </div>
+                    <span class="vault-status-badge">Vault 06</span>
+                </div>
+                <figcaption class="account-signature">
+                    <span class="meta-label">Cloudinary Node 6:</span>
+                    <span class="email-text">bhoirutukanta7@gmail.com</span>
+                </figcaption>
+            </figure>
+        </div>
+
+     </div>
+</main>
+
+<section id="filesPage" style="display: none;"></section>
+
+    <div id="accountPortalModal" class="portal-popup-wrapper" style="display: none;"></div>
+
+<script type="module" src="script.js"></script>
+</body>
+</html>
+
+
