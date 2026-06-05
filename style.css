@@ -291,53 +291,64 @@ body::before {
 }
 
 /* =========================================================================
-   📱 8. MOBILE & TABLET STRICTION MEDIA QUERIES (FORCED 2-COLUMNS ADJUSTMENT)
+   📱 8. MOBILE & TABLET STRICTION MEDIA QUERIES (DYNAMIC RESPONSIVE ADJUSTMENT)
    ========================================================================= */
 @media (max-width: 850px) {
-    /* Mobile me columns ko break hone se rokne ke liye responsive management */
+    /* ⚡ Mobile par 3 columns ko stack karke 1 column kiya taaki cards squeeze na hon */
     .grid-layout-wrapper {
-        grid-template-columns: 1fr 1fr; /* Strictly forced 2 columns */
-        gap: 1.2rem; /* Mobile ke hisab se spacing adjust ki */
+        grid-template-columns: 1fr !important; 
+        gap: 2rem; /* Columns ke beech me space */
+    }
+
+    /* Column content ke stack spacing ko sahi kiya */
+    .image-vault-column, 
+    .pdf-vault-column,
+    .supabase-vault-column {
+        gap: 1.2rem;
     }
 
     .vault-container {
-        padding: 0.75rem;
+        padding: 1rem;
     }
 
-    /* Cards structure compression */
+    /* Cards structure and padding for mobile comfort */
     .vault-card {
-        padding: 0.8rem;
-        border-radius: 14px;
+        padding: 1.2rem;
+        border-radius: 16px;
     }
 
     /* Graphic viewport inner box scaling */
     .card-graphic-node {
-        height: 110px; /* View height reduced for mobile screens */
+        height: 130px; /* Mobile par card ki height balance rakhega */
     }
 
     .icon-avatar {
-        font-size: 2.2rem; /* Avatar size shrunk beautifully */
+        font-size: 2.8rem; /* Icons sahi ratio me shrink honge */
     }
 
     .vault-status-badge {
-        font-size: 0.6rem;
-        padding: 2px 6px;
-        top: 8px;
-        right: 8px;
+        font-size: 0.65rem;
+        padding: 3px 8px;
+        top: 10px;
+        right: 10px;
     }
 
     .column-title {
-        font-size: 0.95rem;
+        font-size: 1.1rem;
         padding-bottom: 0.5rem;
+        margin-bottom: 0.2rem;
     }
 
-    /* Email Text scaling to prevent layout breaks */
+    /* Email Text breaking configuration to prevent visual overflow */
     .email-text {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis; /* Badi emails automatically doted (...) ho jayengi */
     }
 
     .meta-label {
-        font-size: 0.6rem;
+        font-size: 0.65rem;
     }
     
     .brand-title {
@@ -349,13 +360,6 @@ body::before {
     }
 }
 
-.image-vault .icon-avatar {
-    color: #60a5fa; /* Image icons ko cool blue glow dene ke liye */
-}
-
-.pdf-vault .icon-avatar {
-    color: #c084fc; /* PDF icons ko modern purple glow dene ke liye */
-}
 
 
 
@@ -1711,5 +1715,39 @@ body::before {
         gap: 1rem;
         justify-content: space-between;
         width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+/* Purane .supa-badge ko isse replace karein */
+.supa-badge {
+    position: absolute !important;
+    top: 12px !important;
+    right: 12px !important;
+    background: rgba(16, 185, 129, 0.1) !important;
+    border: 1px solid rgba(16, 185, 129, 0.2) !important;
+    color: #10b981 !important;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    padding: 3px 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(16, 185, 129, 0.1);
+}
+
+/* Mobile responsive alignment override for supabase badge */
+@media (max-width: 850px) {
+    .supa-badge {
+        font-size: 0.65rem !important;
+        padding: 3px 8px !important;
+        top: 10px !important;
+        right: 10px !important;
     }
 }
