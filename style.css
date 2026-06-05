@@ -29,53 +29,221 @@ body::before {
     z-index: -1;
 }
 
+
+
 /* =========================================================================
-   ✨ 2. HERO SECTION: COOL DESIGN & ANIMATION
+   ✨ 2. HERO SECTION: ULTRA PREMIUM MATRIX GLOW DESIGN
    ========================================================================= */
 .hero-section {
     position: relative;
-    padding: 5rem 2rem 3rem 2rem;
-    text-align: center;
+    padding: 6rem 2rem 4rem 2rem;
+    text-align: left;
     overflow: hidden;
+    background: #020617; /* Dark palette premium base */
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
 
-/* Glowing orb behind header */
-.hero-glow-effect {
+/* Cybernetic subtle grid texture background */
+.hero-mesh-grid {
     position: absolute;
-    top: -50px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 300px;
-    height: 150px;
-    background: linear-gradient(90deg, #3b82f6, #8b5cf6);
-    filter: blur(80px);
-    opacity: 0.4;
+    inset: 0;
+    background-image: 
+        linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+    background-size: 30px 30px;
+    mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+    -webkit-mask-image: radial-gradient(ellipse at center, black, transparent 80%);
+    opacity: 0.8;
     pointer-events: none;
 }
 
-.hero-content {
+/* Dual high-fidelity ambient blur elements */
+.hero-glow-node {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(100px);
+    opacity: 0.25;
+    pointer-events: none;
+    z-index: 1;
+}
+.alpha-glow {
+    top: -10%;
+    left: 20%;
+    width: 400px;
+    height: 250px;
+    background: linear-gradient(135deg, #3b82f6, #6366f1);
+}
+.beta-glow {
+    bottom: -20%;
+    right: 10%;
+    width: 350px;
+    height: 200px;
+    background: linear-gradient(135deg, #10b981, #8b5cf6);
+}
+
+/* Modern horizontal alignment wrapper code */
+.hero-layout-wrapper {
     position: relative;
     z-index: 2;
-    animation: fadeInDown 1s ease-out;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 3rem;
+    align-items: center;
+}
+
+.hero-content {
+    animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Live Operational Badge */
+.premium-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(59, 130, 246, 0.08);
+    border: 1px solid rgba(59, 130, 246, 0.2);
+    color: #60a5fa;
+    padding: 0.4rem 0.8rem;
+    border-radius: 100px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+}
+.badge-pulse {
+    width: 6px;
+    height: 6px;
+    background: #3b82f6;
+    border-radius: 50%;
+    box-shadow: 0 0 10px #3b82f6;
+    animation: indicatorPulse 2s infinite;
 }
 
 .brand-title {
-    font-size: 3.5rem;
+    font-size: 3.8rem;
     font-weight: 800;
-    letter-spacing: -1px;
-    background: linear-gradient(135deg, #ffffff 30%, #a5b4fc 100%);
+    line-height: 1.1;
+    letter-spacing: -1.5px;
+    background: linear-gradient(135deg, #ffffff 40%, #cbd5e1 70%, #6366f1 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    text-shadow: 0 4px 20px rgba(255, 255, 255, 0.05);
+    filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.5));
 }
 
 .brand-tagline {
-    font-size: 1.1rem;
+    font-size: 1.15rem;
     color: #94a3b8;
-    margin-top: 0.5rem;
+    margin-top: 1rem;
+    line-height: 1.6;
     font-weight: 400;
-    letter-spacing: 1px;
+    max-width: 500px;
 }
+
+/* Right Side: Futuristic Glassmorphic Frame Engine */
+.hero-visual-frame {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInUp 1s cubic-bezier(0.16, 1, 0.3, 1) 0.2s backwards;
+}
+
+.glass-frame-container {
+    position: relative;
+    width: 100%;
+    max-width: 460px;
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    border-radius: 16px;
+    padding: 0.5rem;
+    box-shadow: 
+        0 20px 40px -15px rgba(0, 0, 0, 0.7),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(12px);
+    transition: transform 0.5s ease, border-color 0.5s ease;
+}
+
+.glass-frame-container:hover {
+    transform: translateY(-4px) scale(1.01);
+    border-color: rgba(99, 102, 241, 0.25);
+}
+
+/* Mock Console Command Panel Window bars styling */
+.frame-window-bar {
+    display: flex;
+    gap: 6px;
+    padding: 0.4rem 0.6rem 0.8rem 0.6rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.02);
+}
+.frame-window-bar .dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    opacity: 0.6;
+}
+.red-dot { background: #ef4444; }
+.yellow-dot { background: #f59e0b; }
+.green-dot { background: #10b981; }
+
+/* Image Layer Mask Configuration */
+.premium-hero-img {
+    width: 100%;
+    height: auto;
+    max-height: 260px;
+    object-fit: cover;
+    border-radius: 10px;
+    background: #090d16;
+    display: block;
+    opacity: 0.9;
+    transition: opacity 0.3s ease;
+}
+.glass-frame-container:hover .premium-hero-img {
+    opacity: 1;
+}
+
+/* Keyframe Animations Engine Integration */
+@keyframes indicatorPulse {
+    0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0.5); }
+    70% { transform: scale(1); box-shadow: 0 0 0 8px rgba(59, 130, 246, 0); }
+    100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(59, 130, 246, 0); }
+}
+
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Fluid Layout Breakpoints */
+@media (max-width: 968px) {
+    .hero-layout-wrapper {
+        grid-template-columns: 1fr;
+        text-align: center;
+        gap: 2.5rem;
+    }
+    .hero-section {
+        padding: 4rem 1.5rem 3rem 1.5rem;
+    }
+    .brand-title {
+        font-size: 2.8rem;
+    }
+    .brand-tagline {
+        margin: 1rem auto 0 auto;
+    }
+    .hero-visual-frame {
+        max-width: 100%;
+    }
+    .glass-frame-container {
+        margin: 0 auto;
+    }
+}
+
+
+
+
+
+
 
 /* =========================================================================
    🎛️ 3. VAULT DUAL-COLUMN GRID ARCHITECTURE (FORCED TWO COLUMNS)
